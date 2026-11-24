@@ -7,10 +7,369 @@
   },
   "item": [
     {
-      "name": "rama 1 · login y servicios",
+      "name": "rama 1 · login y servicios (CodeSpace)",
       "item": [
         {
-          "name": "Listar Servicios",
+          "name": "1. Listar Servicios",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{urlCodeSpace}}/api/servicios",
+              "host": [
+                "{{urlCodeSpace}}"
+              ],
+              "path": [
+                "api",
+                "servicios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "2. Servicios Activos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{urlCodeSpace}}/api/servicios/activos",
+              "host": [
+                "{{urlCodeSpace}}"
+              ],
+              "path": [
+                "api",
+                "servicios",
+                "activos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "3. Servicio por titulo",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{urlCodeSpace}}/api/servicios/buscar?titulo=terapia",
+              "host": [
+                "{{urlCodeSpace}}"
+              ],
+              "path": [
+                "api",
+                "servicios",
+                "buscar"
+              ],
+              "query": [
+                {
+                  "key": "titulo",
+                  "value": "terapia"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "4. Buscar Servicio",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{urlCodeSpace}}/api/servicios/1 ",
+              "host": [
+                "{{urlCodeSpace}}"
+              ],
+              "path": [
+                "api",
+                "servicios",
+                "1 "
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "5. Servicios: obtener 999",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{urlCodeSpace}}/api/servicios/999",
+              "host": [
+                "{{urlCodeSpace}}"
+              ],
+              "path": [
+                "api",
+                "servicios",
+                "999"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "6. Crear Servicios",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"titulo\": \"Ginecologia\",\r\n\"descripcion\": \"Masaje en puntos de los pies\", \"costo\": 85.0,\r\n\"duracion\": 40, \"foto\": null,\r\n\"activo\": true}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{urlCodeSpace}}/api/servicios",
+              "host": [
+                "{{urlCodeSpace}}"
+              ],
+              "path": [
+                "api",
+                "servicios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "7. Servicios: crear título repetido",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"titulo\": \"Ginecologia\",\r\n\"descripcion\": \"Masaje en puntosde los pies\", \"costo\": 85.0,\r\n\"duracion\": 40, \"foto\": null,\r\n\"activo\": true}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{urlCodeSpace}}/api/servicios",
+              "host": [
+                "{{urlCodeSpace}}"
+              ],
+              "path": [
+                "api",
+                "servicios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "8. Servicios: crear con datos inválidos",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"titulo\": \"\", \"costo\": -5,\r\n\"duracion\": 5}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{urlCodeSpace}}/api/servicios",
+              "host": [
+                "{{urlCodeSpace}}"
+              ],
+              "path": [
+                "api",
+                "servicios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "9. Actualizar Servicio",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"titulo\": \"Cualquiera\",\r\n\"descripcion\": \"Masaje en puntosde los pies\", \"costo\": 90.0,\r\n\"duracion\": 40, \"foto\": null,\r\n\"activo\": false}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{urlCodeSpace}}/api/servicios/10",
+              "host": [
+                "{{urlCodeSpace}}"
+              ],
+              "path": [
+                "api",
+                "servicios",
+                "10"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "10. Servicios: eliminar 1 (está en uso)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{urlCodeSpace}}/api/servicios/1",
+              "host": [
+                "{{urlCodeSpace}}"
+              ],
+              "path": [
+                "api",
+                "servicios",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "11. Eliminar Servicio",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{urlCodeSpace}}/api/servicios/10",
+              "host": [
+                "{{urlCodeSpace}}"
+              ],
+              "path": [
+                "api",
+                "servicios",
+                "10"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "12. Servicios: eliminar otra vez",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{urlCodeSpace}}/api/servicios/10",
+              "host": [
+                "{{urlCodeSpace}}"
+              ],
+              "path": [
+                "api",
+                "servicios",
+                "10"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "13. Login gerente",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"email\": \"gerente@terapias.pe\",\r\n\"password\": \"Clave123\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{urlCodeSpace}}/api/auth/login",
+              "host": [
+                "{{urlCodeSpace}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "14. Login admin",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"email\": \"admin@terapias.pe\",\r\n\"password\": \"Clave123\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{urlCodeSpace}}/api/auth/login",
+              "host": [
+                "{{urlCodeSpace}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "15. Login contraseña incorrecta",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": []
+            },
+            "url": {
+              "raw": "{{urlCodeSpace}}/api/auth/login",
+              "host": [
+                "{{urlCodeSpace}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "rama 1 · login y servicios (baseUrl)",
+      "item": [
+        {
+          "name": "1. Listar Servicios",
           "request": {
             "method": "GET",
             "header": [],
@@ -37,7 +396,7 @@
           "response": []
         },
         {
-          "name": "Servicios Activos",
+          "name": "2. Servicios Activos",
           "request": {
             "method": "GET",
             "header": [],
@@ -56,7 +415,7 @@
           "response": []
         },
         {
-          "name": "Servicio por titulo",
+          "name": "3. Servicio por titulo",
           "request": {
             "method": "GET",
             "header": [],
@@ -81,7 +440,7 @@
           "response": []
         },
         {
-          "name": "Buscar Servicio",
+          "name": "4. Buscar Servicio",
           "request": {
             "method": "GET",
             "header": [],
@@ -100,7 +459,7 @@
           "response": []
         },
         {
-          "name": "Servicios: obtener 999",
+          "name": "5. Servicios: obtener 999",
           "request": {
             "method": "GET",
             "header": [],
@@ -119,7 +478,7 @@
           "response": []
         },
         {
-          "name": "Crear Servicios",
+          "name": "6. Crear Servicios",
           "request": {
             "method": "POST",
             "header": [],
@@ -146,7 +505,7 @@
           "response": []
         },
         {
-          "name": "Servicios: crear título repetido",
+          "name": "7. Servicios: crear título repetido",
           "request": {
             "method": "POST",
             "header": [],
@@ -173,7 +532,7 @@
           "response": []
         },
         {
-          "name": "Servicios: crear con datos inválidos",
+          "name": "8. Servicios: crear con datos inválidos",
           "request": {
             "method": "POST",
             "header": [],
@@ -200,7 +559,7 @@
           "response": []
         },
         {
-          "name": "Actualizar Servicio",
+          "name": "9. Actualizar Servicio",
           "request": {
             "method": "PUT",
             "header": [],
@@ -228,7 +587,7 @@
           "response": []
         },
         {
-          "name": "Servicios: eliminar 1 (está en uso)",
+          "name": "10. Servicios: eliminar 1 (está en uso)",
           "request": {
             "method": "DELETE",
             "header": [],
@@ -247,7 +606,7 @@
           "response": []
         },
         {
-          "name": "Eliminar Servicio",
+          "name": "11. Eliminar Servicio",
           "request": {
             "method": "DELETE",
             "header": [],
@@ -266,7 +625,7 @@
           "response": []
         },
         {
-          "name": "Servicios: eliminar otra vez",
+          "name": "12. Servicios: eliminar otra vez",
           "request": {
             "method": "DELETE",
             "header": [],
@@ -285,7 +644,7 @@
           "response": []
         },
         {
-          "name": "Login gerente",
+          "name": "13. Login gerente",
           "request": {
             "method": "POST",
             "header": [],
@@ -313,7 +672,7 @@
           "response": []
         },
         {
-          "name": "Login admin",
+          "name": "14. Login admin",
           "request": {
             "method": "POST",
             "header": [],
@@ -341,7 +700,7 @@
           "response": []
         },
         {
-          "name": "Login contraseña incorrecta",
+          "name": "15. Login contraseña incorrecta",
           "request": {
             "method": "POST",
             "header": [],
